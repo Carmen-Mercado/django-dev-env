@@ -1,0 +1,42 @@
+###########################
+#                         #
+#     Semantic Weapons    #
+#                         #
+###########################
+
+###########################
+# Create new project
+###########################
+
+$ cd /opt/projects/
+
+$ mkdir project_name
+
+$ cookiecutter https://github.com/pydanny/cookiecutter-django
+
+$ source /usr/bin/virtualenvwrapper.sh 
+
+$ mkvirtualenv project_name
+
+$ workon project_name
+
+$ pip3.4 install -r requirements/local.txt
+
+$ createdb project_name
+
+$ ./manage.py migrate
+
+###########################
+# Run project
+###########################
+
+$ cd /opt/projects/project_name
+
+$ ./manage.py runserver 0.0.0.0:8000
+
+###########################
+# Browse
+###########################
+
+Point your browser to localhost:18000
+

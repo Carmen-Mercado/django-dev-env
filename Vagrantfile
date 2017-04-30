@@ -12,16 +12,22 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "opscode_centos-7.1_chef-provisionerless.box"
-  config.vm.box = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/vmware/opscode_centos-7.1_chef-provisionerless.box"
+  config.vm.box = "centos/6"
 
   # mount directories
   config.vm.synced_folder "salt/roots/", "/srv/salt/", type: "nfs"
+  config.vm.synced_folder "../demo/", "/opt/projects/demo/", type: "nfs"
+
+  config.vm.provider "vmware_fusion" do |v|
+    v.gui = false
+  end
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 80, host: 8010
+
+  # django server
+  config.vm.network "forwarded_port", guest: 8000, host: 18000
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.

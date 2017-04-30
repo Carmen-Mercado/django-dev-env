@@ -5,3 +5,7 @@ vim-enhanced:
 wget:
   pkg:
     - installed
+
+git:
+  pkg:
+    - installed
