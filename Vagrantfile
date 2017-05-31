@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 
   # mount directories
   config.vm.synced_folder "salt/roots/", "/srv/salt/", type: "nfs"
-  config.vm.synced_folder "../demo/", "/opt/projects/demo/", type: "nfs"
+  config.vm.synced_folder "../django-projects/", "/opt/projects/", type: "nfs"
 
   config.vm.provider "vmware_fusion" do |v|
     v.gui = false

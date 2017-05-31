@@ -82,6 +82,12 @@ virtualenvwrapper:
     - name: pip3.4 install virtualenvwrapper
     - cwd: /
 
+django-grappelli:
+  cmd.run:
+    - runas: root
+    - name: pip3.4 install django-grappelli
+    - cwd: /
+
 add-workon-env:
    environ.setenv:
      - name: WORKON_HOME
